@@ -1,0 +1,40 @@
+{{ partial "xmag/header.html" . }}
+
+<div class="container">
+
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  {{ range $i, $e := .Params.categories }}
+    {{ if $i }} &hercon; {{ end }}<a href="{{ relURL (print "/categories/" $e | urlize) }}">{{ $e }}</a>
+  {{ end }}
+  </div>
+
+  <h1><span class="title">{{ .Title }}</span></h1>
+
+  {{ if .Params.author }}
+  <h3 class="author">{{ partial "xmag/author_names.html" . }}</h3>
+  {{ end }}
+
+  {{ partial "xmag/meta.html" . }}
+
+</div>
+
+{{ if .Params.toc }}
+{{ .TableOfContents }}
+{{ end }}
+
+<main>
+{{ .Content }}
+</main>
+
+{{ partial "xmag/author.html" . }}
+{{ partial "xmag/info.html" . }}
+{{ partial "xmag/prev_next.html" . }}
+{{ partial "xmag/comments.html" . }}
+</article>
+</div>
+{{ partial "footer.html" . }}
+    {{ partial "scripts.html" . }}
+</body>

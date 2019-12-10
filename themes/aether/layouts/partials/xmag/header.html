@@ -1,0 +1,7 @@
+{{ partial "head.html" . }}
+<link rel="stylesheet" href="{{ "/xmag/style.css" | relURL }}" />
+<link rel="stylesheet" href="{{ "/xmag/fonts.css" | relURL }}" />
+<body{{if .IsPage}} class="page"{{ end }}>
+	{{ partial "nav-bar.html" . }}
+	
+	
