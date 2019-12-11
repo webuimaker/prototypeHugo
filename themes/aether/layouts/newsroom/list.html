@@ -1,12 +1,15 @@
 {{ partial "newsroom/header.html" . }}
 
 
-
+<div style="display:none;">
+{{ partial "newsroom/archive.html" . }}
+	{{- partial "newsroom/pager.html" . }}
+	</div>
 
 
    <main>
    <div class = 'wrap mt post'>
-			
+	
 		
    
    
@@ -39,6 +42,7 @@
   {{- end }}
 </div>
 <a href = '{{ absURL (printf "post/%s" "") }}' class = 'post_nav'><span class = 'post_next'>View Archive</span></a>
+
 </main>
     {{ partial "newsroom/footer.html" . }}
   </body>
