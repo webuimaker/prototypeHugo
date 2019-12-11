@@ -1,0 +1,11 @@
+{{ partial "head.html" . }}
+  <link rel='canonical' href='{{ .Permalink }}'>
+
+  {{- $options := (dict "targetPath" "/newsroom/css/main.css" "outputStyle" "expanded" "enableSourceMap" "true") -}}
+  {{- $styles := resources.Get "/newsroom/scss/main.scss" | resources.ExecuteAsTemplate "/newsroom/scss/main.scss" . | resources.ToCSS $options | resources.Fingerprint "sha512" }}
+  <link rel = 'stylesheet' href = '{{ $styles.Permalink }}' integrity = '{{ $styles.Data.Integrity }}'>
+  
+<body>
+	{{ partial "nav-bar.html" . }}
+	
+	

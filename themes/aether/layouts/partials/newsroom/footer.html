@@ -1,0 +1,13 @@
+<footer class = 'footer wrap pale'>
+  <!--<p>&copy;&nbsp;<span class = 'year'></span>&nbsp;{{ .Site.Title }}</p>-->
+  <p>{{ i18n "designed_by" .Site.Data.designer | safeHTML }}</p>
+</footer>
+
+
+{{ partial "scripts.html" . }}
+
+{{ $corejs := resources.Get "/newsroom/js/index.js" | minify }}
+  <script src="{{ $corejs.Permalink }}"></script>
+
+
+</body>

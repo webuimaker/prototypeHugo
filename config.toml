@@ -9,3 +9,9 @@ theme = "aether"
 brand = "aether"
 description = "aether Hugo theme for blogs"
 bgimg = "img/ignasi_pattern_s.png"
+
+
+pygmentsCodefences = true
+pygmentsCodefencesGuessSyntax = true
+pygmentsUseClasses=true
+pygmentsOptions = "linenos=table"
