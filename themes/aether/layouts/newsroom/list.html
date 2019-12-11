@@ -5,15 +5,13 @@
 
    <main>
    <div class = 'wrap mt post'>
-	
-		
-   
+
    
    
   {{- $size := .Paginator.PageSize }}
-  {{ $pages := .Paginate (where .Data.Pages "Section" "newsroom").ByPublishDate.Reverse }}
+ 
   {{ $scratch := newScratch }}
-  {{- range $index, $value := $pages.Pages }}
+  {{- range $index, $value := where .Data.Pages  "Section" "newsroom"  }}
     {{ if isset .Params "image" }}
       {{ $scratch.Set "image" .Params.image }}
     {{ else }}
