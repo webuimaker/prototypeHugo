@@ -1,10 +1,6 @@
 {{ partial "newsroom/header.html" . }}
 
 
-<div style="display:none;">
-{{ partial "newsroom/archive.html" . }}
-	{{- partial "newsroom/pager.html" . }}
-	</div>
 
 
    <main>
@@ -15,7 +11,7 @@
    
    
   {{- $size := .Paginator.PageSize }}
-  {{ $pages := .Paginate (where .Site.RegularPages "Section" "!=" "").ByPublishDate.Reverse }}
+  {{ $pages := .Paginate (where .Data.Pages "Section" "newsroom").ByPublishDate.Reverse }}
   {{ $scratch := newScratch }}
   {{- range $index, $value := $pages.Pages }}
     {{ if isset .Params "image" }}
