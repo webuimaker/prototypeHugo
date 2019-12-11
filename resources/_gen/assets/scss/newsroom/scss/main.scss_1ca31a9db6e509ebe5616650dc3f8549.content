@@ -268,6 +268,10 @@ aside h3 {
   margin: 0 !important;
 }
 
+.ds-none {
+  display: none;
+}
+
 .article {
   box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.12);
   overflow: hidden;
